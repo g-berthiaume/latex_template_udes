@@ -1,0 +1,135 @@
+% ======================================================================
+% Sujet du document
+% Informations importantes
+% Suite des informations importantes
+%
+% Prénom Nom
+% XX XX 2017
+% ======================================================================
+% Ce code rassemble les efforts d'étudiants de la faculté de génie  
+% de l'université de Sherbrooke afin de faire un template LaTeX moderne
+% dédié à l'écriture de rapport universitaire.
+% Ce document est libre d'être utilisé et modifié.
+% Version 0.2
+% ======================================================================
+
+% ----------------------------------------------------
+% Initialisation
+% ----------------------------------------------------
+\documentclass{udes_rapport} % Voir udes_rapport.cls
+
+\begin{document}
+\selectlanguage{french}
+
+% ----------------------------------------------------
+% Information concernant le rapport
+% ----------------------------------------------------
+\faculte{Génie}
+\departement{Génie électrique et Génie informatique}
+\app{5}{Communications et Processus aléatoires}
+\professeur{M. Jean Paul 2}
+\etudiants{G. Berthiaume - berg2222 \\ F. Labelle - labf7777 }
+\dateRemise{12 Juillet 2017}
+
+
+% ======================================================================
+
+% ----------------------------------------------------
+% Page titre
+% ----------------------------------------------------
+\fairePageTitre
+\newpage
+
+% ----------------------------------------------------
+% Table des matières
+% ----------------------------------------------------
+\tableofcontents
+\newpage
+
+
+% ----------------------------------------------------
+% Table des figures
+% ----------------------------------------------------
+\listoffigures
+\newpage
+
+
+
+% ----------------------------------------------------
+% Document
+% ----------------------------------------------------
+\section{Introduction}
+
+La physique est la science qui tente de comprendre, de modéliser, voire d'expliquer les phénomènes naturels de l'univers. Elle correspond à l'étude du monde qui nous entoure sous toutes ses formes, des lois de sa variation et de son évolution.
+
+La modélisation des systèmes peut laisser de côté les processus chimiques et biologiques ou les inclure. La physique développe des représentations du monde expérimentalement vérifiables dans un domaine de définition donné. Elle produit donc plusieurs lectures du monde, chacune n'étant considérée comme précise que jusqu'à un certain point.
+
+La physique telle que conceptualisée par Isaac Newton, aujourd’hui dénommé physique classique, butait sur l'explication de phénomènes naturels comme le rayonnement du corps noir (catastrophe ultraviolette) ou les anomalies de l’orbite de la planète Mercure, ce qui posait un réel problème aux physiciens. Les tentatives effectuées pour comprendre et modéliser les phénomènes nouveaux auxquels on accédait à la fin du xixe siècle révisèrent en profondeur le modèle newtonien pour donner naissance à deux nouveaux ensembles de théories physiques. Certains diront qu'il existe donc trois ensembles de théories physiques établies, chacune valide dans le domaine d’applications qui lui est propre.
+
+\section{Exemples}
+
+
+% ----------------------------------------------------
+\subsection{Un exemple de figure}
+
+Démonstration des figures
+
+\inclureFigure
+    {udes_logo}
+    {0.5}
+    {Tout un logo après ça !}
+    {fig:logo}
+    
+Il est possible de constater que le logo de la figure \ref{fig:logo} est très jolie.
+
+
+% ----------------------------------------------------
+\subsection{Un exemple de math}
+
+
+Démonstration de l'intégration mathématique:
+
+Une autre fonction classique
+\begin{equation}
+   -c = a*x^2 + b*x
+\end{equation}
+On a alors
+\begin{equation}
+   -c = a*x^2 + b*x \iff 0 = a*x^2 + b*x + c
+\end{equation}
+d'où 
+\begin{equation}
+x_{1,2} = \frac{- b \pm \sqrt{\Delta}}{2a} 
+\end{equation}
+
+Un peu plus complexe:
+
+Les équations de Maxwell, aussi appelées équations de Maxwell-Lorentz, sont des lois fondamentales de la physique. Elles constituent les postulats de base de l'électromagnétisme, avec l'expression de la force électromagnétique de Lorentz.
+
+Ces équations traduisent sous forme locale différents théorèmes (Gauss, Ampère, Faraday) qui régissaient l'électromagnétisme avant que Maxwell ne les réunisse sous forme d'équations intégrales. Elles donnent ainsi un cadre mathématique précis au concept fondamental de champ introduit en physique par Faraday dans les années 1830.
+
+Ces équations montrent notamment qu'en régime stationnaire, les champs électrique et magnétique sont indépendants l'un de l'autre, alors qu'ils ne le sont pas en régime variable. Dans le cas le plus général, il faut donc parler du champ électromagnétique, la dichotomie électrique-magnétique étant une vue de l'esprit. Cet aspect trouve sa formulation définitive dans le formalisme covariant présenté dans la seconde partie de cet article : le champ électromagnétique y est représenté par un objet mathématique unique : le tenseur électromagnétique, dont certaines composantes s'identifient à celles du champ électrique et d'autres à celles du champ magnétique.
+
+\begin{equation}
+    \begin{aligned}
+        \frac{\partial\mathcal{D}}{\partial t} \quad & = \quad \nabla\times\mathcal{H},   & \quad \text{(Loi de Faraday)} \\[5pt]
+        \frac{\partial\mathcal{B}}{\partial t} \quad & = \quad -\nabla\times\mathcal{E},  & \quad \text{(Loi d'Ampère)}   \\[5pt]
+        \nabla\cdot\mathcal{B}                 \quad & = \quad 0,                         & \quad \text{(Loi de Gauss)}   \\[5pt]
+        \nabla\cdot\mathcal{D}                 \quad & = \quad 0.                         & \quad \text{(Loi de Colomb)}  \\[5pt]
+    \end{aligned}
+\end{equation}
+
+% ----------------------------------------------------
+\subsection{Un exemple de code}
+
+Voici un example qui démontre l'intégration facile de code dans le rapport.
+\begin{pythoncode}
+def fibonacci():
+    a,b = 0,1
+    while True:
+        yield a
+        a, b = b, a + b
+\end{pythoncode}
+
+\end{document}
+
