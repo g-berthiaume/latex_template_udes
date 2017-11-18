@@ -1,7 +1,7 @@
 # LaTeX Template - UdeS
 
 
-<p align="center"><img width=60% src="https://github.com/g-berthiaume/latex_template_udes/tree/master/media/udes_armoiries.jpeg"></p>
+<p align="center"><img width=60% src="https://github.com/g-berthiaume/latex_template_udes/media/udes_armoiries.jpg"></p>
 
 
 A latex template for undergraduate students, with respect to the standard establish by the engineering department of Université de Sherbrooke (UdeS).
@@ -28,7 +28,7 @@ Par exemple, pour créer une page titre, il suffit d'entrer:
 
 La compilation en pdf de cette commande générera ceci: 
 
-![Exemple de page titre](https://github.com/g-berthiaume/latex_template_udes/tree/master/media/eg_page_titre.PNG) 
+![Exemple de page titre](https://github.com/g-berthiaume/latex_template_udes/media/eg_page_titre.PNG) 
 
 > Pour un aperçu complet du rapport rendu en pdf, veuilez vous référer au dossier [bin](https://github.com/g-berthiaume/latex_template_udes/tree/master/bin/).
 
@@ -98,7 +98,7 @@ Pour citer l'excellent article de sharelatex :
 J'ajouterais que l'utilisation de `git` et l'habilité de `parser` des documents LaTeX donne beaucoup de flexibilité au créateur.
 Finalement, pour des petits documents nous pensons que Microsoft Word à encore ça place. Ce graphique résume bien le débat de *Word vs LaTeX*: 
 
-![Word vs LaTeX](https://github.com/g-berthiaume/latex_template_udes/tree/master/media/word_vs_latex.png)
+![Word vs LaTeX](https://github.com/g-berthiaume/latex_template_udes/media/word_vs_latex.png)
 
 
 ## License
