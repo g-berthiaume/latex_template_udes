@@ -1,0 +1,12 @@
+#############################
+#       .gitignore          #
+#############################
+
+# Ignore python binary
+__pycache__/
+*.pyc
+
+
+# Ignore editor specific dir/file
+.vscode/
+.emacs
