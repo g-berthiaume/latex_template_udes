@@ -1,8 +1,8 @@
+
+<p align="center"><img width=20% src="media/udes_armoiries.jpg"></p>
+
+
 # LaTeX Template - UdeS
-
-
-<p align="center"><img width=60% src="https://github.com/g-berthiaume/latex_template_udes/media/udes_armoiries.jpg"></p>
-
 
 A latex template for undergraduate students, with respect to the standard establish by the engineering department of Université de Sherbrooke (UdeS).
 
@@ -16,6 +16,8 @@ Ce gabarit (template) définit une classe LaTeX offrant une liste de fonctionnal
 Par exemple, pour créer une page titre, il suffit d'entrer:
 
 ```latex
+% nous somme dans main.tex
+
 \faculte{Génie}
 \departement{Génie électrique et Génie informatique}
 \app{5}{Communications et Processus aléatoires}
@@ -28,7 +30,7 @@ Par exemple, pour créer une page titre, il suffit d'entrer:
 
 La compilation en pdf de cette commande générera ceci: 
 
-![Exemple de page titre](https://github.com/g-berthiaume/latex_template_udes/media/eg_page_titre.PNG) 
+![Exemple de page titre](media/eg_page_titre.PNG) 
 
 > Pour un aperçu complet du rapport rendu en pdf, veuilez vous référer au dossier [bin](https://github.com/g-berthiaume/latex_template_udes/tree/master/bin/).
 
@@ -96,9 +98,9 @@ Pour citer l'excellent article de sharelatex :
 > One of the most important reasons people use LaTeX is that it separates the content of the document from the style. This means that once you have written the content of your document, we can change its appearance with ease. Similarly, you can create one style of document which can be used to standardise the appearance of many different documents. This allows scientific journals to create templates for submissions. These templates have a pre-made layout meaning that only the content needs to be added. In fact there are hundreds of templates available for everything from CVs to slideshows.
 
 J'ajouterais que l'utilisation de `git` et l'habilité de `parser` des documents LaTeX donne beaucoup de flexibilité au créateur.
-Finalement, pour des petits documents nous pensons que Microsoft Word à encore ça place. Ce graphique résume bien le débat de *Word vs LaTeX*: 
+Pour finir, Word reste un outil puissant. Ce graphique résume bien le débat de *Word vs LaTeX*: 
 
-![Word vs LaTeX](https://github.com/g-berthiaume/latex_template_udes/media/word_vs_latex.png)
+![Word vs LaTeX](media/word_vs_latex.png)
 
 
 ## License
