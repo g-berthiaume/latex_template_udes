@@ -1,0 +1,16 @@
+TODO.TXT
+========
+
+PROJET | Pas GEGI:
+-------------------------------------------------------------------------------------------
+- Nouveau style: Sans APP pour autres génies.
+- Faire un exemple avec des equations chimiques. (Génie chimique et biotechnologique)
+
+
+PROJET | Amélioration générale: 
+-------------------------------------------------------------------------------------------
+- Ajouter un système de bibliographie
+- Cleaner le code update_readme_prerequisit.py il est terrible -_-
+- Ajouter un système pour changer les polices / style du documents
+- Faire un exemple de tableau de résults -> possible d'importer excel ?
+- Page titre: Faire des espacements intélligent i.e la page titre s'adapte selon le nombre de nom.
