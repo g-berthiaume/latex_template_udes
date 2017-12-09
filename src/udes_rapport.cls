@@ -5,7 +5,6 @@
 % de l'université de Sherbrooke afin de faire un template LaTeX moderne
 % dédié à l'écriture de rapport universitaire.
 % Ce document est libre d'être utilisé et modifié.
-% Version 0.2
 % ======================================================================
 % Requis: 
 %   - LaTeX 
@@ -14,8 +13,10 @@
 %     d'avoir installer un module python. 
 % Note:
 %   Cette classe à été conçu pour compiler sans problème sur le site
-%   www.sharelatex.com
+%   www.sharelatex.com ou www.overleaf.com
 %
+% ======================================================================
+% Version: 0.21
 % ======================================================================
 %
 %     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((
@@ -55,7 +56,7 @@
 % Initier la classe
 % ----------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{udes_rapport}[2017/07/02 universite de sherbrooke template de rapport]
+\ProvidesClass{udes_rapport}[2017/12/09 université de sherbrooke - template]
 \LoadClass{article}
 
 
@@ -65,7 +66,7 @@
 \RequirePackage{natbib}                                         % Semble important avant Babel
 \RequirePackage[french, english]{babel}                         % Support Français et anglais
 \RequirePackage[T1]{fontenc}                                    % Support des traits d'unions en FR
-\RequirePackage[utf8]{inputenc}                                 % Pour les éèâü Français
+\RequirePackage[utf8]{inputenc}                                 % UFT8 - Pour les éèâü Français
 
 
 % ----------------------------------------------------
@@ -74,20 +75,24 @@
 % ----------------------------------------------------
 
 % Faire les marges
-\RequirePackage[margin=3.17cm]{geometry}                        % Inclut le package et instaure les marges
+\RequirePackage[margin=2.5cm]{geometry}                        % Inclut le package et instaure les marges
 
 % Modifier l'interligne
 \linespread{1.5}                                                % Pour un interligne de 1.5
 
 % Faire l'en-tête et le pied de page
 \RequirePackage{fancyhdr}                                       % inclut le package
+\RequirePackage{lastpage}                                       % Derniere page (pour le pied)
 \pagestyle{fancy}                                               % active le package
 \fancyhead{}                                                    % Reset l'en tête
 \fancyfoot{}                                                    % Reset le pied de page
-\fancyfoot[R]{\thepage}                                         % Set le numéro de page
+\fancyfoot[L]{\small APP \@num_app : \@nom_app}                 % Configure le style du pied de page
+\fancyfoot[c]{}
+\fancyfoot[R]{\small \thepage/\pageref{LastPage}}
 \renewcommand{\headrulewidth}{0pt}                              % Reset la ligne de l'en tête
 \renewcommand{\footrulewidth}{0pt}                              % Reset la ligne du pied de page
 \pagenumbering{arabic}                                          % Met des nombre normal (pas romain)
+
 
 % Faire des références
 \RequirePackage[hidelinks]{hyperref}                            % Pour des référence clickables
@@ -116,8 +121,7 @@
 \RequirePackage{amsmath}                                        % Toolbox pour l'écriture d'équation
 \RequirePackage{amssymb}                                        % Collection de symboles mathématique
 \RequirePackage{bm}                                             % Police en gras
-
-%\RequirePackage{etoolbox}
+\RequirePackage{etoolbox}                                       % Toolbox pour aider la création de classe
 
 
 % ----------------------------------------------------
@@ -127,7 +131,7 @@
 
 
 % ----------------------------------------------------
-% Commandes variables
+% Variables globales
 % ----------------------------------------------------
 
 % Défini le nom de la faculté
@@ -163,11 +167,23 @@
 % ----------------------------------------------------
 % Commandes fonctions
 % ----------------------------------------------------
-
-% Fabrique une page titre 
-% Usage: \fairePageTitre
+% API pour fabrique une page titre. Appellera la sous fonction
+% appropriée pour générer la page
+% Usage: \fairePageTitre{<style>}
+% Args: <style>  peut être 'STD' ou 'LOGO'
 % Note: Nécessite l'initialisation de variables globales
-\newcommand{\fairePageTitre}{
+\newcommand{\fairePageTitre}[1]{%
+        \ifstrempty{#1}{}{}%
+        \ifstrequal{#1}{STD}{\pagetitreSTD}{} %
+        \ifstrequal{#1}{LOGO}{\pagetitreLOGO}{}%
+}
+
+
+% Créer une page titre sans logo
+% Usage: \pagetitreSTD
+% Note: Cette fonction ne doit être utiliser que par l'API fairePageTitre
+%       Nécessite l'initialisation de variables globales
+\newcommand{\pagetitreSTD}{
 \begin{titlepage}
 \begin{center}
 UNIVERSITÉ DE SHERBROOKE \\
@@ -183,6 +199,36 @@ Présenté à :\\
 Présenté par : \\
 \@etudiants \\
 [4.5cm]
+Sherbrooke \\
+\@dateRemise \\
+\end{center}
+\end{titlepage}
+}
+
+% Créer une page titre avec armoiries 
+% Usage: \pagetitreLOGO
+% Note: Cette fonction ne doit être utiliser que par l'API fairePageTitre
+%       Nécessite l'initialisation de variables globales
+\newcommand{\pagetitreLOGO}{
+\begin{titlepage}
+\begin{figure}[t]
+\includegraphics[width=3cm]{udes_armoiries}
+\centering
+\end{figure}
+\begin{center}
+UNIVERSITÉ DE SHERBROOKE \\
+Faculté de \MakeLowercase{\@faculte}\\
+Département de \@departement\\
+[2.5cm]
+\textsc{\LARGE \@nom_app} \\
+\textsc{APP \@num_app}\\
+[2cm] 
+Présenté à :\\
+\@professeur \\
+[2.5cm] 
+Présenté par : \\
+\@etudiants \\
+[3.5cm]
 Sherbrooke \\
 \@dateRemise \\
 \end{center}

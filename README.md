@@ -25,7 +25,7 @@ Par exemple, pour créer une page titre, il suffit d'entrer:
 \etudiants{G. Berthiaume - berg2222}
 \dateRemise{12 Juillet 2017}
 
-\fairePageTitre
+\fairePageTitre{LOGO}
 ```
 
 La compilation en pdf de cette commande générera ceci: 
@@ -100,7 +100,7 @@ Pour citer l'excellent article de sharelatex :
 J'ajouterais que l'utilisation de `git` et l'habilité de `parser` des documents LaTeX donne beaucoup de flexibilité au créateur.
 Pour finir, Word reste un outil puissant. Ce graphique résume bien le débat de *Word vs LaTeX*: 
 
-![Word vs LaTeX](media/word_vs_latex.png)
+![Word vs LaTeX](media/learning_curves.jpg)
 
 
 ## License
